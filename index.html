@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IJMA International Model School, Kolkata</title>
+<link rel="icon" type="image/jpeg" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F6FB;--surf:#fff;--ink:#14163F;--mute:#4D5073;--blue:#2A2A9E;--green:#1F7A5C;--gold:#B8902F;
+  --night:#14163F;--onnight:#F5F6FB;--line:#DDE0EE;--star:rgba(184,144,47,.22);
+  --d:'Amiri',Georgia,serif;--b:'Figtree',system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D0F2B;--surf:#161942;--ink:#EEF0FA;--mute:#A9ADD0;--blue:#8E92FF;--green:#4FCB9F;--gold:#D9B55A;--night:#080A20;--line:#2A2E63
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D0F2B;--surf:#161942;--ink:#EEF0FA;--mute:#A9ADD0;--blue:#8E92FF;--green:#4FCB9F;--gold:#D9B55A;--night:#080A20;--line:#2A2E63
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--b)}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--d);font-weight:700;line-height:1.15;margin:0}
+h2{font-size:clamp(2rem,4.5vw,3.2rem);max-width:20ch}
+p{margin:0 0 1em;max-width:64ch;color:var(--mute)}
+.star{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23B8902F' stroke-opacity='.28' stroke-width='1.2'%3E%3Crect x='20' y='20' width='40' height='40'/%3E%3Crect x='20' y='20' width='40' height='40' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E")}
+
+/* Header & Brand */
+header.top{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.brand{display:flex;gap:14px;align-items:center;text-decoration:none;font-family:var(--d);font-weight:700;font-size:1.25rem;line-height:1.15}
+.brand-logo{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);background:#fff;box-shadow:0 3px 10px rgba(0,0,0,.08);flex-shrink:0}
+nav{display:flex;gap:26px;align-items:center;font-weight:500;font-size:.95rem}
+nav a{text-decoration:none;transition:color .2s ease}
+nav a:hover{color:var(--blue)}
+.btn{display:inline-block;background:var(--blue);color:#fff!important;padding:12px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--blue);transition:all .2s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(42,42,158,.25)}
+.btn.o{background:transparent;color:var(--ink)!important;border-color:var(--ink)}
+.btn.o:hover{background:var(--ink);color:var(--surf)!important}
+
+/* Hero */
+.hero{padding:30px 0 80px}
+.hg{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.bis{font-family:var(--d);font-size:1.5rem;color:var(--gold);margin-bottom:14px;direction:rtl;text-align:left}
+h1{font-size:clamp(2.9rem,7vw,5.4rem);letter-spacing:-.01em}
+h1 em{font-weight:400;color:var(--blue)}
+.lead{font-size:1.18rem;margin:22px 0 30px}
+.acts{display:flex;gap:14px;flex-wrap:wrap}
+.arch{border-radius:999px 999px 18px 18px;overflow:hidden;border:3px solid var(--gold);padding:10px;background:var(--surf);box-shadow:0 18px 40px rgba(20,22,63,.1)}
+.arch img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 10px 10px;cursor:pointer;transition:transform .4s ease}
+.arch:hover img{transform:scale(1.02)}
+.badge{margin-top:14px;font-family:var(--d);font-style:italic;font-size:1.15rem;color:var(--mute);text-align:center}
+
+/* Quick Info Band */
+.band{background:var(--night);color:var(--onnight);padding:26px 0}
+.band .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--d);font-size:1.25rem}
+
+/* Common Section */
+.sec{padding:90px 0}
+.sec.alt{background:var(--surf)}
+.sec-header{margin-bottom:40px}
+.sec-header p{margin-top:12px;font-size:1.05rem}
+
+/* About Section */
+.two{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.ah-item{padding:16px;background:var(--surf);border:1px solid var(--line);border-radius:12px;border-left:4px solid var(--gold)}
+.ah-item strong{display:block;font-size:1.2rem;font-family:var(--d);color:var(--ink);margin-bottom:4px}
+.ah-item span{font-size:.88rem;color:var(--mute);display:block;line-height:1.4}
+.about-media{position:relative}
+.fr{border-radius:999px 999px 18px 18px;overflow:hidden;border:3px solid var(--line);background:var(--surf);box-shadow:0 14px 34px rgba(20,22,63,.08)}
+.fr img{width:100%;aspect-ratio:4/5;object-fit:cover;cursor:pointer}
+.about-subcard{position:absolute;bottom:-24px;left:-24px;right:24px;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:12px 16px;display:flex;gap:14px;align-items:center;box-shadow:0 12px 28px rgba(20,22,63,.12)}
+.about-subcard img{width:68px;height:52px;object-fit:cover;border-radius:8px;border:1px solid var(--line);flex-shrink:0}
+.about-subcard strong{display:block;font-size:.95rem;color:var(--ink)}
+.about-subcard span{font-size:.82rem;color:var(--mute);line-height:1.3;display:block}
+
+/* Learning Pillars Cards */
+.pil{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px}
+.pil-card{background:var(--surf);border:1px solid var(--line);border-top:4px solid var(--green);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease}
+.alt .pil-card{background:var(--bg)}
+.pil-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(20,22,63,.09)}
+.pil-card:nth-child(2){border-top-color:var(--blue)}
+.pil-card:nth-child(3){border-top-color:var(--gold)}
+.pil-card:nth-child(4){border-top-color:var(--green)}
+.pil-img{height:160px;overflow:hidden;position:relative;background:var(--line);cursor:pointer}
+.pil-img img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.pil-card:hover .pil-img img{transform:scale(1.06)}
+.pil-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.pil-body h3{font-size:1.35rem;margin-bottom:8px}
+.pil-body p{font-size:.93rem;margin:0;line-height:1.55}
+
+/* Campus Life Gallery */
+.gal{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:36px}
+.gal figure{margin:0;position:relative;overflow:hidden;border-radius:16px;cursor:pointer;background:var(--line);box-shadow:0 4px 14px rgba(20,22,63,.06);transition:transform .25s ease, box-shadow .25s ease}
+.gal figure:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(20,22,63,.14)}
+.gal img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .4s ease}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:36px 18px 14px;color:#fff;font-weight:600;font-size:.92rem;background:linear-gradient(transparent,rgba(8,10,32,.88));display:flex;justify-content:space-between;align-items:flex-end;pointer-events:none}
+.gal .tag{font-size:.72rem;padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.22);backdrop-filter:blur(4px);letter-spacing:.03em;font-weight:500;text-transform:uppercase}
+
+/* Gallery Spans */
+.g-w8{grid-column:span 8;min-height:300px}
+.g-w4{grid-column:span 4;min-height:300px}
+.g-w6{grid-column:span 6;min-height:280px}
+.g-w3{grid-column:span 4;min-height:250px}
+
+/* Events Cards */
+.ev{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.ev-card{background:var(--surf);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 4px 16px rgba(20,22,63,.05);transition:transform .25s ease, box-shadow .25s ease}
+.ev-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(20,22,63,.1)}
+.ev-img{height:190px;overflow:hidden;position:relative;background:var(--line);cursor:pointer}
+.ev-img img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.ev-card:hover .ev-img img{transform:scale(1.05)}
+.ev-body{padding:22px;border-left:4px solid var(--gold);flex:1}
+.ev-date{font-size:.8rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.ev-body h3{font-size:1.35rem;margin-bottom:8px}
+.ev-body p{margin:0;font-size:.94rem;line-height:1.55}
+
+/* CTA */
+.cta{background:var(--blue);color:#fff;padding:84px 0;text-align:center}
+.cta h2{color:#fff;margin:0 auto 16px}
+.cta p{margin:0 auto 28px;color:#E3E4FF}
+.cta .btn{background:#fff;color:#14163F!important;border-color:#fff}
+.cta .btn:hover{background:var(--night);color:#fff!important;border-color:var(--night)}
+
+/* Footer */
+footer{background:var(--night);color:var(--onnight);padding:60px 0 36px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.footer-brand{display:flex;gap:14px;align-items:center;margin-bottom:14px}
+.footer-logo{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);background:#fff}
+footer h3{font-size:1.3rem;margin-bottom:12px;color:var(--gold)}
+footer p,footer li{color:#BFC3E6;font-size:.95rem;line-height:1.6}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:6px}
+.sm{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:.88rem;color:#9a9ec8;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* Interactive Lightbox Modal */
+.modal{position:fixed;inset:0;background:rgba(8,10,32,.92);backdrop-filter:blur(6px);display:none;place-items:center;z-index:9999;padding:20px;cursor:zoom-out;animation:fadeIn .2s ease}
+.modal.open{display:grid}
+.modal-box{position:relative;max-width:960px;max-height:90vh;display:flex;flex-direction:column;align-items:center;cursor:default}
+.modal-box img{max-height:80vh;max-width:100%;border-radius:10px;object-fit:contain;box-shadow:0 12px 40px rgba(0,0,0,.5);border:2px solid rgba(184,144,47,.4)}
+.modal-caption{color:#fff;margin-top:14px;font-family:var(--d);font-size:1.25rem;text-align:center;letter-spacing:.02em}
+.modal-close{position:absolute;top:-42px;right:0;background:transparent;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;padding:4px 10px;border-radius:6px;transition:color .2s}
+.modal-close:hover{color:var(--gold)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* Responsive Breakpoints */
+@media(max-width:960px){
+  .hg,.two,.fg,.ev{grid-template-columns:1fr}
+  .pil{grid-template-columns:1fr 1fr}
+  nav a:not(.btn){display:none}
+  .sec{padding:64px 0}
+  .hg{gap:36px}
+  .about-subcard{position:static;margin-top:18px}
+  .g-w8,.g-w4,.g-w6,.g-w3{grid-column:span 12!important;min-height:240px}
+}
+@media(max-width:540px){
+  .pil{grid-template-columns:1fr}
+  .about-highlights{grid-template-columns:1fr}
+  h1{font-size:2.5rem}
+  .band .w{font-size:1.05rem}
+}
+@media(prefers-reduced-motion:no-preference){
+  .arch{animation:rise .9s ease-out both}
+  @keyframes rise{from{opacity:0;transform:translateY(24px)}}
+}
+</style>
+</head>
+<body>
+
+<div class="star">
+  <div class="w">
+    <header class="top">
+      <a class="brand" href="#">
+        <img class="brand-logo" src="images/logo.jpg" alt="IJMA International Model School Logo">
+        <span>IJMA International<br>Model School</span>
+      </a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#learn">Learning</a>
+        <a href="#life">Campus life</a>
+        <a href="#events">Events</a>
+        <a class="btn" href="#admission">Apply for admission</a>
+      </nav>
+    </header>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="w hg">
+      <div>
+        <div class="bis" lang="ar">بسم الله الرحمن الرحيم</div>
+        <h1>Sky is the limit.<br><em>Faith is the compass.</em></h1>
+        <p class="lead">An English-medium CBSE school in Kolkata where children grow in knowledge, character and iman, side by side.</p>
+        <div class="acts">
+          <a class="btn" href="#admission">Book a school visit</a>
+          <a class="btn o" href="#life">See life at IIMS</a>
+        </div>
+      </div>
+      <div>
+        <div class="arch">
+          <img src="images/sports-meet-hero.jpg" alt="Four IIMS girls sprinting on the sports field during the Annual Sports Meet" class="zoomable" data-caption="Annual Sports Meet — Girls Sprint Race">
+        </div>
+        <div class="badge">Annual Sports Meet</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Info Ribbon -->
+<div class="band">
+  <div class="w">
+    <span>English-medium CBSE curriculum</span>
+    <span>Islamic education from day one</span>
+    <span>Nursery to XII (proposed)</span>
+  </div>
+</div>
+
+<!-- About Section -->
+<section class="sec" id="about">
+  <div class="w two">
+    <div>
+      <h2>A school that teaches the whole child.</h2>
+      <p style="margin-top:20px">At IJMA International Model School, a morning of robotics and mathematics sits comfortably beside Qur’an, adab and Islamic values. Children do not choose between modern excellence and their deen. They grow into both.</p>
+      <p>Small classrooms, caring teachers and a parent community that is actively involved at every milestone.</p>
+      
+      <div class="about-highlights">
+        <div class="ah-item">
+          <strong>Estd. 2022</strong>
+          <span>Founded with a vision for modern academic rigor and grounded Islamic values in Kolkata.</span>
+        </div>
+        <div class="ah-item">
+          <strong>Holistic Growth</strong>
+          <span>Integrating CBSE curriculum, hands-on STEM robotics, karate, and moral character.</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="about-media">
+      <div class="fr">
+        <img src="images/parent-teacher.jpg" alt="Parent-teacher orientation in a classroom" class="zoomable" data-caption="Parent-Teacher Orientation Session in Progress">
+      </div>
+      <div class="about-subcard">
+        <img src="images/school-crest-presentation.jpg" alt="IJMA School Leadership and Emblem Presentation" class="zoomable" data-caption="School Leadership and Administration honoring excellence under the IIMS Emblem">
+        <div>
+          <strong>Leadership &amp; Dedicated Faculty</strong>
+          <span>Committed mentors fostering character and academic excellence.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Learning Pillars Section -->
+<section class="sec alt" id="learn">
+  <div class="w">
+    <div class="sec-header">
+      <h2>Four ways your child grows here.</h2>
+      <p>A balanced education designed to cultivate intellect, spiritual clarity, and physical strength.</p>
+    </div>
+    
+    <div class="pil">
+      <!-- Pillar 1: Academics -->
+      <div class="pil-card">
+        <div class="pil-img">
+          <img loading="lazy" src="images/student-certificate-boy.jpg" alt="Student receiving CBSE academic certificate" class="zoomable" data-caption="Academic Recognition — Student receiving CBSE certificate of achievement">
+        </div>
+        <div class="pil-body">
+          <h3>Academics</h3>
+          <p>CBSE-aligned teaching in English, built on clear concepts, engaging classroom projects, and continuous teacher guidance.</p>
+        </div>
+      </div>
+
+      <!-- Pillar 2: Deen & Character -->
+      <div class="pil-card">
+        <div class="pil-img">
+          <img loading="lazy" src="images/student-certificate-girl.jpg" alt="Student honored for character and achievement" class="zoomable" data-caption="Deen & Character — Nurturing confident, modest, and accomplished young scholars">
+        </div>
+        <div class="pil-body">
+          <h3>Deen and character</h3>
+          <p>Qur’an, daily prayer habits, adab, and the seven pillars of iman taught with warmth, dignity, and personal mentorship.</p>
+        </div>
+      </div>
+
+      <!-- Pillar 3: STEM & Robotics -->
+      <div class="pil-card">
+        <div class="pil-img">
+          <img loading="lazy" src="images/robotics-lab.jpg" alt="Students building gear models and robots" class="zoomable" data-caption="STEM & Robotics Lab — Students assembling gear trains and motorized models">
+        </div>
+        <div class="pil-body">
+          <h3>STEM and robotics</h3>
+          <p>Hands-on engineering workshops where young minds assemble gear trains, motorized cars, circuits, and problem-solving kits.</p>
+        </div>
+      </div>
+
+      <!-- Pillar 4: Sports & Fitness -->
+      <div class="pil-card">
+        <div class="pil-img">
+          <img loading="lazy" src="images/karate-field.jpg" alt="Karate training on sports turf" class="zoomable" data-caption="Martial Arts & Fitness — Regular karate practice and athletic training on turf">
+        </div>
+        <div class="pil-body">
+          <h3>Sports &amp; Fitness</h3>
+          <p>Karate martial arts training, sprinting tracks, and an annual sports meet teaching resilience, focus, and joyful teamwork.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Campus Life Section -->
+<section class="sec" id="life">
+  <div class="w">
+    <div class="sec-header">
+      <h2>Life at IIMS, as it really is.</h2>
+      <p>Photographs from our classrooms, science exhibitions, sports field, and student award ceremonies.</p>
+    </div>
+
+    <div class="gal">
+      <!-- 1. Learning Exhibition Panorama -->
+      <figure class="g-w8">
+        <img loading="lazy" src="images/learning-exhibition.jpg" alt="Classroom learning exhibition with students displaying craft models" class="zoomable" data-caption="Student Project Exhibition — Creative models, geography displays, and science charts">
+        <figcaption>
+          <span>Project &amp; Science Exhibition</span>
+          <span class="tag">Academics</span>
+        </figcaption>
+      </figure>
+
+      <!-- 2. Robotics Lab -->
+      <figure class="g-w4">
+        <img loading="lazy" src="images/robotics-lab.jpg" alt="Students building robotic cars and gear models" class="zoomable" data-caption="Robotics & STEM Workshop — Practical innovation in the classroom">
+        <figcaption>
+          <span>Robotics &amp; STEM Lab</span>
+          <span class="tag">Innovation</span>
+        </figcaption>
+      </figure>
+
+      <!-- 3. National Education Day Speaker -->
+      <figure class="g-w6">
+        <img loading="lazy" src="images/education-day-speaker.jpg" alt="Speaker at podium addressing students on National Education Day" class="zoomable" data-caption="National Education Day — Commemorating Maulana Abul Kalam Azad">
+        <figcaption>
+          <span>National Education Day Address</span>
+          <span class="tag">Commemoration</span>
+        </figcaption>
+      </figure>
+
+      <!-- 4. Assembly & Classroom Gathering -->
+      <figure class="g-w6">
+        <img loading="lazy" src="images/education-day-assembly.jpg" alt="Students and guests gathered for the school assembly" class="zoomable" data-caption="School Assembly — Students, parents, and educators gathered together">
+        <figcaption>
+          <span>School Assembly &amp; Session</span>
+          <span class="tag">Community</span>
+        </figcaption>
+      </figure>
+
+      <!-- 5. Student Certificate Boy -->
+      <figure class="g-w3">
+        <img loading="lazy" src="images/student-certificate-boy.jpg" alt="Boy student receiving academic certificate" class="zoomable" data-caption="Merit Recognition — Official certificate presentation to student">
+        <figcaption>
+          <span>Academic Merit Award</span>
+          <span class="tag">Honours</span>
+        </figcaption>
+      </figure>
+
+      <!-- 6. Student Award Girl -->
+      <figure class="g-w3">
+        <img loading="lazy" src="images/student-award-girl.jpg" alt="Girl student receiving award on stage" class="zoomable" data-caption="Student Felicitation — Celebrating young talent and dedication">
+        <figcaption>
+          <span>Student Felicitation</span>
+          <span class="tag">Achievement</span>
+        </figcaption>
+      </figure>
+
+      <!-- 7. Karate Field -->
+      <figure class="g-w3">
+        <img loading="lazy" src="images/karate-field.jpg" alt="Karate training session on green sports field" class="zoomable" data-caption="Karate Demonstration — Discipline, self-defense, and confidence">
+        <figcaption>
+          <span>Karate Training on Turf</span>
+          <span class="tag">Sports</span>
+        </figcaption>
+      </figure>
+
+      <!-- 8. Boy Award Stage -->
+      <figure class="g-w3">
+        <img loading="lazy" src="images/student-award-boy.jpg" alt="Prize presentation to boy student" class="zoomable" data-caption="Annual Prize Distribution — Honoring classroom diligence">
+        <figcaption>
+          <span>Prize Distribution</span>
+          <span class="tag">Excellence</span>
+        </figcaption>
+      </figure>
+
+      <!-- 9. Girl Certificate Stage -->
+      <figure class="g-w3">
+        <img loading="lazy" src="images/student-certificate-girl.jpg" alt="Girl student receiving certificate" class="zoomable" data-caption="Certificate Presentation — Recognizing diligence and moral character">
+        <figcaption>
+          <span>Certificate Ceremony</span>
+          <span class="tag">Recognition</span>
+        </figcaption>
+      </figure>
+
+      <!-- 10. Sports Karate Demo -->
+      <figure class="g-w3">
+        <img loading="lazy" src="images/sports-karate-demo.jpg" alt="Karate demonstration at Annual Sports Meet" class="zoomable" data-caption="Annual Sports Meet — Karate and physical fitness demonstration">
+        <figcaption>
+          <span>Sports Meet Karate Demo</span>
+          <span class="tag">Athletics</span>
+        </figcaption>
+      </figure>
+
+      <!-- 11. School Emblem & Leadership -->
+      <figure class="g-w6">
+        <img loading="lazy" src="images/school-crest-presentation.jpg" alt="Leadership with official school emblem framed" class="zoomable" data-caption="IIMS Leadership — Dedicated to community service and value-based education">
+        <figcaption>
+          <span>Institutional Milestones</span>
+          <span class="tag">Leadership</span>
+        </figcaption>
+      </figure>
+
+      <!-- 12. Guest Felicitation -->
+      <figure class="g-w6">
+        <img loading="lazy" src="images/guest-felicitation.jpg" alt="Felicitation of guest of honour on stage" class="zoomable" data-caption="Honouring Distinguished Guests — Building bridges with scholars and community elders">
+        <figcaption>
+          <span>Guest of Honour Felicitation</span>
+          <span class="tag">Community</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Events Section -->
+<section class="sec alt star" id="events">
+  <div class="w">
+    <div class="sec-header">
+      <h2>A calendar full of reasons to gather.</h2>
+      <p>Signature celebrations where our school family unites to inspire, encourage, and reflect.</p>
+    </div>
+
+    <div class="ev">
+      <!-- Event 1: National Education Day -->
+      <article class="ev-card">
+        <div class="ev-img">
+          <img loading="lazy" src="images/education-day-speaker.jpg" alt="National Education Day at IIMS" class="zoomable" data-caption="National Education Day — Maulana Abul Kalam Azad Commemoration">
+        </div>
+        <div class="ev-body">
+          <div class="ev-date">November 11 &bull; Annual Observance</div>
+          <h3>National Education Day</h3>
+          <p>We commemorate India’s first education minister Maulana Abul Kalam Azad with guest addresses, student presentations, and academic prize distributions.</p>
+        </div>
+      </article>
+
+      <!-- Event 2: Annual Sports Meet -->
+      <article class="ev-card">
+        <div class="ev-img">
+          <img loading="lazy" src="images/sports-karate-demo.jpg" alt="Annual Sports Meet on turf ground" class="zoomable" data-caption="Annual Sports Meet — Races and martial arts displays">
+        </div>
+        <div class="ev-body">
+          <div class="ev-date">Winter Athletic Championship</div>
+          <h3>Annual Sports Meet</h3>
+          <p>Track sprints, karate kata displays, tug of war, and medal podiums where every child is celebrated for their determination and teamwork.</p>
+        </div>
+      </article>
+
+      <!-- Event 3: Parent-Teacher Orientation -->
+      <article class="ev-card">
+        <div class="ev-img">
+          <img loading="lazy" src="images/parent-teacher.jpg" alt="Parent-Teacher Orientation Meeting" class="zoomable" data-caption="Parent-Teacher Orientation (অভিভাবক সভা) — School and family partnership">
+        </div>
+        <div class="ev-body">
+          <div class="ev-date">Term Sessions &bull; Regular Meet</div>
+          <h3>Parent-Teacher Orientation</h3>
+          <p>Families connect closely with educators, discuss curriculum roadmaps, track individual child development, and align on holistic upbringing.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta" id="admission">
+  <div class="w">
+    <h2>Admissions are open for 2026&ndash;2027.</h2>
+    <p>Visit the campus, meet our caring educators, and explore our STEM lab, sports turf, and classrooms.</p>
+    <a class="btn" href="#contact">Contact the school office</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+  <div class="w">
+    <div class="fg">
+      <div>
+        <div class="footer-brand">
+          <img class="footer-logo" src="images/logo.jpg" alt="IJMA International Model School Logo">
+          <div>
+            <h3 style="margin-bottom:2px">IJMA International</h3>
+            <span style="font-family:var(--d);font-size:1.1rem;color:var(--gold)">Model School, Kolkata</span>
+          </div>
+        </div>
+        <p>English-medium CBSE curriculum integrated with Islamic education and adab.<br>Estd. 2022 &bull; Kolkata, West Bengal.</p>
+      </div>
+      <div>
+        <h3>Visit our campus</h3>
+        <ul>
+          <li><strong>Location:</strong> Kolkata, West Bengal</li>
+          <li><strong>Office hours:</strong> Monday &ndash; Saturday, 8:30 AM &ndash; 3:30 PM</li>
+          <li><strong>Campus tours:</strong> Available by appointment</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Get in touch</h3>
+        <ul>
+          <li><strong>Admissions hotline:</strong> Inquire at school office</li>
+          <li><strong>Curriculum:</strong> CBSE English Medium</li>
+          <li><strong>Motto:</strong> Sky is the limit &bull; Faith is the compass</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sm">
+      <span>&copy; 2026 IJMA International Model School. All rights reserved.</span>
+      <span>Kolkata &bull; Nur al-Ilm (نور العلم)</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Lightbox Modal for Full View -->
+<div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Image Preview">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close image preview">&times;</button>
+    <img id="modalImg" src="" alt="">
+    <div class="modal-caption" id="modalCaption"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalCaption = document.getElementById('modalCaption');
+  const modalClose = document.getElementById('modalClose');
+
+  function openModal(src, alt, caption) {
+    modalImg.src = src;
+    modalImg.alt = alt || '';
+    modalCaption.textContent = caption || alt || '';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    modalImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.zoomable').forEach(img => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openModal(img.src, img.alt, img.dataset.caption);
+    });
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target === modalClose) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
